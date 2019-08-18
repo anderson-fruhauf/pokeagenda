@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Pokeagenda</title>
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <div class="container" id="topo">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-8 offset-md-3 container-fluid">
+        <input id="inpBuscar" type="text" placeholder="Nome" aria-label="Search">
+        <button id="btnBuscar" class="btn btn-outline-success" type="button">buscar</button>
+      </div>
+      <div class="col"></div>
+    </div>
+
+    <div class="container row">
+      <div class="col"></div>
+      <div id="card" class="card text-white bg-success col-8">
+        <div class="card-header"></div>
+        <div class="card-body">
+          <h2 id="cardNome" class="card-title"></h2>
+
+          <p id="cardTipo" class="card-text">É um pokemon com tipo: </p>
+          <p id="contador"></p>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+
+    <div id="footer" class="container row">
+      <div class="col"></div>
+      <button type="button" id="btnAnterior" class="col-3 btn btn-outline-info">Anterior</button>
+      <button type="button" id="btnProximo" class="col-3 btn btn-outline-info">Proximo</button>
+      <div class="col"></div>
+    </div>
+
+    <div id="remove" class="container row">
+      <div class="col"></div>
+      <button type="button" id="btnRemove" class="col-3 btn btn-danger">Remover</button>
+      <button type="button" id="btnCadastra" class="col-3 btn btn-primary">Cadastrar</button>
+      <div class="col"></div>
+    </div>
+  </div>
+
+  <!-- You can also require other files to run in this process -->
+  <script>
+    require('./renderer.js');
+  </script>
+</body>
+
+</html>
