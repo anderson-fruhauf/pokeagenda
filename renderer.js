@@ -26,6 +26,9 @@ let atual = 0;
 
 refresh();
 
+setInterval(()=>{
+    pokemon = new Pokemon();
+},10000);
 
 anterior.addEventListener('click', () =>{
     if(atual>0){
@@ -82,13 +85,21 @@ ipcRenderer.on('information-dialog-selection', (event, index) => {
 })
 
 btnCadastra.addEventListener('click', ()=>{
-    const modalPath = path.join('./index.html')
-    let win = new BrowserWindow({ width: 1000, height: 1000 })
-  
+    let win = new BrowserWindow({ 
+        width: 800, 
+        height: 600, 
+
+        webPreferences: {
+            preload: path.join(__dirname, 'preload.js'),
+            nodeIntegration: true
+          }
+    })
+    //win.webContents.openDevTools()
     win.on('close', () => { win = null })
-    win.loadURL(modalPath)
+    win.loadFile('cadastro.html')
     win.show()
 })
+
 
 function refresh(){
     cardNome.innerHTML = pokemon.get(atual).name;
